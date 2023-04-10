@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{% load static %}
+{%block content%}
+<div class="container">
+    <a href="{%url 'create' %}" class="btn btn-primary">create todo</a>
+    <ul>
+        {%for todo in todos%}
+        <li><a href="{%url 'detailed' todo.id %}">{{todo.name}}</li>
+        <li><a class="btn btn-info" href="{%url 'update' todo.id %}">update </a>||
+            <a class="btn btn-info" href="{%url 'delete' todo.id %}">delete
+        </li>
+        {%endfor%}
+
+    </ul>
+</div>
+{%endblock content%}
